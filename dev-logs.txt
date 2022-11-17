@@ -1,0 +1,34 @@
+MERN stack -> {
+    MongoDB - persistence
+    Express - backend framework
+    React.js - frontend framework
+    Node.js - runtime
+}
+
+ What each lib will do:
+
+// Backend
+    Node.js - runtime
+    Express - backend framework
+    Mongoose - MongoDB management solution
+    JWT - authentication/authorization
+    Multer - file upload
+    Body Parser - tool to process the request body
+    BCrypt - password encryption
+    Cors - cross-origin requests (to the internet basically)
+    Dotenv - environment variables access
+    GridFS-Stream - file upload solution
+    Multer-GridFS-Storage - uploader of img/obj to the local persistence
+    Helmet - request safety
+    Morgan - logging
+
+
+// Frontend
+
+    React.js - frontend framework/lib
+    React Router - navigation
+    Formik - form provider
+    Yup - form validation
+    Redux Toolkit - state management
+    Redux Persist - local storage for
+    React Dropzone - drag & drop lib

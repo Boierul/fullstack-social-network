@@ -1,0 +1,4 @@
+# Project exclude paths
+/server/node_modules/
+/server/node_modules/sift/src/core.js
+/server/node_modules/sift/src/index.js
