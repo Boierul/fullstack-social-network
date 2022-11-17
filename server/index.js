@@ -11,6 +11,10 @@ import morgan from "morgan"
 import path from "path";
 import {fileURLToPath} from "url"
 
+import authRoutes from "./routes/auth.js";
+import {register} from "./controllers/auth.js";
+
+
 /*  Configuration of the server (including middleware)  */
 
 // Grabs the file URL
@@ -58,6 +62,17 @@ const storage = multer.diskStorage({
 });
 // Save the file to the storage
 const upload = multer({storage});
+
+
+/* Routes with files */
+
+// Includes middleware functions
+// Are not included in the routes as it needs multer.diskStorage
+// In this case is uploading an image in the local storage
+app.post("/auth/register", upload.single("picture"), register);
+
+/* Regular routes */
+app.use("/auth", authRoutes);
 
 
 /* Mongoose set-up */
