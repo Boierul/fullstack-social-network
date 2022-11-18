@@ -35,8 +35,9 @@ MERN stack -> {
     React Router - navigation
     Formik - form provider
     Yup - form validation
-    Redux Toolkit - state management
-    Redux Persist - local storage for
+    Redux - state management
+    Redux Toolkit - wrapper for easier state management
+    Redux Persist - local storage for state (alternative for cache)
     React Dropzone - drag & drop lib
 
 [----------------]
