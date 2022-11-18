@@ -45,7 +45,9 @@ MERN stack -> {
 [----------------]
 
 - Client (frontend):
-    -
+    - scenes -> bigger components that are making fully functional pages
+    - components -> reusable functional components
+    - state -> redux/redux-toolkit info 
 
 - Server (backend):
     - models -> data models of the system
@@ -54,3 +56,11 @@ MERN stack -> {
     - middleware -> all the middleware functions (in this case only verifyToken for JWT authorization)
     - public -> global local info (images in this case)
     - data -> fake demo data for DB
+
+
+! Custom files !
+<----------------------------------------------------------------------------------------------------------------->
+|               Location                |                       Description                                       |
+<----------------------------------------------------------------------------------------------------------------->
+|   client -> jsconfig.json             |       Will easier the import of different objects                       |
+<----------------------------------------------------------------------------------------------------------------->
