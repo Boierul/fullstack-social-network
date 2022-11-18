@@ -76,9 +76,6 @@ app.post("/auth/register", upload.single("picture"), register);
 
 app.use("/auth", authRoutes);
 
-app.get('/', (req, res) => {
-    return res.send('Received a GET HTTP method');
-});
 
 /* Mongoose set-up */
 
