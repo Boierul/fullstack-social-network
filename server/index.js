@@ -71,8 +71,12 @@ const upload = multer({storage});
 // In this case is uploading an image in the local storage
 app.post("/auth/register", upload.single("picture"), register);
 
+
 /* Regular routes */
 app.use("/auth", authRoutes);
+app.get('/', (req, res) => {
+    return res.send('Received a GET HTTP method');
+});
 
 
 /* Mongoose set-up */
