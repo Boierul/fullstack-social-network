@@ -33,9 +33,9 @@ const app = express();
 // Middlewares
 //
 // Parse requests to JSON
-app.use(express.json)
+app.use(express.json())
 //  Configure request safety
-app.use(helmet)
+app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}))
 // Configure logging format
 app.use(morgan("common"))
@@ -73,11 +73,12 @@ app.post("/auth/register", upload.single("picture"), register);
 
 
 /* Regular routes */
+
 app.use("/auth", authRoutes);
+
 app.get('/', (req, res) => {
     return res.send('Received a GET HTTP method');
 });
-
 
 /* Mongoose set-up */
 
