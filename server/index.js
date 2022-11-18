@@ -18,6 +18,11 @@ import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 
+// Used for demo data
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { users, posts } from "./data/index.js";
+
 
 /*  Configuration of the server (including middleware)  */
 
@@ -97,5 +102,9 @@ mongoose
     })
     .then(() => {
         app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
+
+        /* Add the data one time (not to duplicate data) */
+        // User.insertMany(users);
+        // Post.insertMany(posts);
     })
     .catch((error) => console.log(`${error} did not connect`))

@@ -52,3 +52,4 @@ MERN stack -> {
     - controllers -> the logic of the request
     - middleware -> all the middleware functions (in this case only verifyToken for JWT authorization)
     - public -> global local info (images in this case)
+    - data -> fake demo data for DB
