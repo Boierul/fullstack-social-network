@@ -176,48 +176,52 @@ function Navbar() {
 
                         <IconButton
                             onClick={() => dispatch(setMode())}
-                            sx={{fontSize: "25px", borderRadius: "0px"}}
+                            sx={{fontSize: "25px", borderRadius: "0px", "&:hover": { color: "#ff717b" }}}
                         >
                             {theme.palette.mode === "dark" ? (
                                 <div style={{
                                     display: "flex"
                                 }}>
-                                    <DarkMode sx={{fontSize: "25px"}}/>
+                                    <DarkMode sx={{ fontSize: "25px"}}/>
                                     <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle theme</Typography>
                                 </div>
                             ) : (
                                 <div style={{
                                     display: "flex"
                                 }}>
-                                    <LightMode sx={{color: dark, fontSize: "25px"}}/>
+                                    <LightMode sx={{ fontSize: "25px"}}/>
                                     <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle theme</Typography>
                                 </div>
                             )}
                         </IconButton>
 
                         <IconButton sx={{
-                            borderRadius: "0px"
+                            borderRadius: "0px",
+                            "&:hover": { color: "#ff717b" }
                         }}>
                             <Message sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Message</Typography>
                         </IconButton>
 
                         <IconButton sx={{
-                            borderRadius: "0px"
+                            borderRadius: "0px",
+                            "&:hover": { color: "#ff717b" }
                         }}>
                             <Notifications sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Notifications</Typography>
                         </IconButton>
 
                         <IconButton sx={{
-                            borderRadius: "0px"
+                            borderRadius: "0px",
+                            "&:hover": { color: "#ff717b" }
                         }}>
                             <Help sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Help</Typography>
                         </IconButton>
 
                         <IconButton sx={{
-                            borderRadius: "0px"
+                            borderRadius: "0px",
+                            "&:hover": { color: "#ff717b" }
                         }}>
                             <Logout sx={{fontSize: "25px"}} onClick={() => dispatch(setLogout())}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Log out</Typography>
