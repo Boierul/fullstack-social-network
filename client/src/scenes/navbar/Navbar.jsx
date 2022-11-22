@@ -169,7 +169,7 @@ function Navbar() {
                             justifyContent: "center"
                         }}
                     >
-                        <IconButton sx={{fontSize: "25px", borderRadius: "0px"}}>
+                        <IconButton sx={{fontSize: "25px", borderRadius: "0px",  "&:hover": { color: "#ff717b" }}}>
                             <AccountBox/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Your Profile</Typography>
                         </IconButton>
