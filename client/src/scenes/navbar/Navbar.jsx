@@ -23,9 +23,11 @@ import {
     AccountBox,
     Logout
 } from "@mui/icons-material";
+
 import {useDispatch, useSelector} from "react-redux";
 import {setMode, setLogout} from "state";
 import {useNavigate} from "react-router-dom";
+
 import FlexBetween from "components/FlexBetween";
 
 function Navbar() {
@@ -44,10 +46,7 @@ function Navbar() {
     const primaryLight = theme.palette.primary.light;
     const alt = theme.palette.background.alt;
 
-    // const fullName = `${user.firstName} ${user.lastName}`;
-    const firstName = "Johnny"
-    const lastName = "Sins"
-    const fullName = `${firstName} ${lastName}`;
+    const fullName = `${user.firstName} ${user.lastName}`;
 
     return (
         <FlexBetween padding="1rem 3%" backgroundColor={alt} zIndex="1">
@@ -71,7 +70,7 @@ function Navbar() {
 
             </FlexBetween>
 
-            {/* Show this only on mobile devices */}
+            {/* Show this only on desktop*/}
             {isNonMobileScreens && (
                 <FlexBetween
                     backgroundColor={neutralLight}
@@ -87,7 +86,7 @@ function Navbar() {
                 </FlexBetween>
             )}
 
-            {/* Navigation for Desktop */}
+            {/* Desktop Navigation */}
             {isNonMobileScreens ? (
                 <FlexBetween gap="2rem">
 
