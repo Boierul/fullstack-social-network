@@ -3,32 +3,41 @@ import Form from "./form/Form";
 
 const LoginPage = () => {
     const theme = useTheme();
-    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+    const isNonMobileScreens = useMediaQuery("(min-width: 800px)");
+
     return (
-        <Box>
+        <Box
+            height="100vh"
+            display="flex"
+            alignItems="center"
+        >
             <Box
-                width="100%"
-                backgroundColor={theme.palette.background.alt}
-                p="1rem 6%"
+                minWidth="50%"
+                height="100%"
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                gap="0.5rem"
                 textAlign="center"
+                alignItems="center"
+                backgroundColor={theme.palette.background.alt}
             >
-                <Typography fontWeight="bold" fontSize="32px" color="primary">
+                <Typography fontWeight="bold" fontSize="32px" color="primary" left="20%">
                     Social Network
+                </Typography>
+
+                <Typography fontSize="20px" minWidth="5rem" maxWidth="22rem" textAlign="left">
+                    Social network helps you connect and share with the people in your life.
                 </Typography>
             </Box>
 
             <Box
                 width={isNonMobileScreens ? "50%" : "93%"}
-                p="2rem"
-                m="2rem auto"
-                borderRadius="1.5rem"
-                backgroundColor={theme.palette.background.alt}
+                p="2.5rem"
             >
-                <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-                    Social Network helps you connect and share with the people in your life.
-                </Typography>
                 <Form />
             </Box>
+
         </Box>
     );
 };
