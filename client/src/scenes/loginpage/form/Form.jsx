@@ -1,4 +1,6 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+
 import {
     Box,
     Button,
@@ -7,13 +9,20 @@ import {
     Typography,
     useTheme,
 } from "@mui/material";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
+import {
+    FileUpload,
+    EditOutlined
+} from "@mui/icons-material"
+
 import {Formik} from "formik";
 import * as yup from "yup";
-import {useNavigate} from "react-router-dom";
+
 import {useDispatch} from "react-redux";
 import {setLogin} from "state";
+
 import Dropzone from "react-dropzone";
+
 import FlexBetween from "components/FlexBetween";
 
 // Create a registration validation schema for Formik
@@ -206,11 +215,20 @@ function Form() {
                                             >
                                                 <input {...getInputProps()} />
                                                 {!values.picture ? (
-                                                    <span>Add Picture Here</span>
+                                                    <Box sx={{
+                                                        display: "flex",
+                                                        justifyContent: "center",
+                                                        alignItems: "center"
+                                                    }}>
+                                                        <p>Add Image Here</p>
+                                                        <FileUpload sx={{
+                                                            marginLeft: "1rem"
+                                                        }}/>
+                                                    </Box>
                                                 ) : (
                                                     <FlexBetween>
                                                         <Typography>{values.picture.name}</Typography>
-                                                        <EditOutlinedIcon/>
+                                                        <EditOutlined/>
                                                     </FlexBetween>
                                                 )}
                                             </Box>
