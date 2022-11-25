@@ -23,7 +23,6 @@ import {
 } from "@mui/icons-material";
 
 import React, {useState} from 'react';
-// Navigation hook
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {setLogout, setMode} from "state";
@@ -54,7 +53,7 @@ function Navbar() {
     }
 
     return (
-        <FlexBetween padding="1rem 3%" backgroundColor={alt} zIndex="1">
+        <FlexBetween padding="1rem 3%" backgroundColor={alt} zIndex="1" width="100%" position="fixed">
 
             <FlexBetween gap="1.75rem">
                 <Typography
@@ -71,8 +70,6 @@ function Navbar() {
                 >
                     Social Network
                 </Typography>
-
-
             </FlexBetween>
 
             {/* Show this only on desktop*/}
@@ -240,7 +237,6 @@ function Navbar() {
                     </FlexBetween>
                 </Box>
             )}
-
         </FlexBetween>
     );
 }
