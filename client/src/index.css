@@ -4,7 +4,29 @@ html,
 body,
 #root,
 .app {
-  height: 100%;
-  width: 100%;
-  font-family: "Rubik", sans-serif;
+    height: 100%;
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    -webkit-overflow-scrolling: auto !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff717b;
+    border-radius: 0.1em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fa5460;
 }

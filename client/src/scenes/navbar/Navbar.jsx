@@ -1,32 +1,32 @@
-import React from 'react';
-import {useState} from "react";
 import {
     Box,
+    FormControl,
     IconButton,
     InputBase,
-    Typography,
-    Select,
     MenuItem,
-    FormControl,
-    useTheme,
-    useMediaQuery
+    Select,
+    Typography,
+    useMediaQuery,
+    useTheme
 } from "@mui/material";
 import {
-    Search,
-    Message,
-    DarkMode,
-    LightMode,
-    Notifications,
-    Help,
-    Menu,
-    Close,
     AccountBox,
-    Logout
+    Close,
+    DarkMode,
+    Help,
+    LightMode,
+    Logout,
+    Menu,
+    Message,
+    Notifications,
+    Search
 } from "@mui/icons-material";
 
-import {useDispatch, useSelector} from "react-redux";
-import {setMode, setLogout} from "state";
+import React, {useState} from 'react';
+// Navigation hook
 import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {setLogout, setMode} from "state";
 
 import FlexBetween from "components/FlexBetween";
 
@@ -47,6 +47,11 @@ function Navbar() {
     const alt = theme.palette.background.alt;
 
     const fullName = `${user.firstName} ${user.lastName}`;
+
+    function handleLogout() {
+        dispatch(setLogout())
+        navigate("/");
+    }
 
     return (
         <FlexBetween padding="1rem 3%" backgroundColor={alt} zIndex="1">
@@ -107,12 +112,13 @@ function Navbar() {
                             value={fullName}
                             sx={{
                                 backgroundColor: neutralLight,
-                                width: "150px",
+                                minWidth: "3rem",
+                                maxWidth: "10rem",
                                 borderRadius: "0.25rem",
                                 p: "0.25rem 1rem",
                                 "& .MuiSvgIcon-root": {
                                     pr: "0.25rem",
-                                    width: "3rem",
+                                    width: "3rem"
                                 },
                                 "& .MuiSelect-select:focus": {
                                     backgroundColor: neutralLight,
@@ -121,9 +127,12 @@ function Navbar() {
                             input={<InputBase/>}
                         >
                             <MenuItem value={fullName} style={{width: "150px"}}>
-                                <Typography>{fullName}</Typography>
+                                {fullName}
                             </MenuItem>
-                            <MenuItem onClick={() => dispatch(setLogout())}>
+                            <MenuItem>
+                                Settings
+                            </MenuItem>
+                            <MenuItem onClick={handleLogout}>
                                 Log Out
                             </MenuItem>
                         </Select>
@@ -168,35 +177,37 @@ function Navbar() {
                             justifyContent: "center"
                         }}
                     >
-                        <IconButton sx={{fontSize: "25px", borderRadius: "0px",  "&:hover": { color: "#ff717b" }}}>
+                        <IconButton sx={{fontSize: "25px", borderRadius: "0px", "&:hover": {color: "#ff717b"}}}>
                             <AccountBox/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Your Profile</Typography>
                         </IconButton>
 
                         <IconButton
                             onClick={() => dispatch(setMode())}
-                            sx={{fontSize: "25px", borderRadius: "0px", "&:hover": { color: "#ff717b" }}}
+                            sx={{fontSize: "25px", borderRadius: "0px", "&:hover": {color: "#ff717b"}}}
                         >
                             {theme.palette.mode === "dark" ? (
                                 <div style={{
                                     display: "flex"
                                 }}>
-                                    <DarkMode sx={{ fontSize: "25px"}}/>
-                                    <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle theme</Typography>
+                                    <DarkMode sx={{fontSize: "25px"}}/>
+                                    <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle
+                                        theme</Typography>
                                 </div>
                             ) : (
                                 <div style={{
                                     display: "flex"
                                 }}>
-                                    <LightMode sx={{ fontSize: "25px"}}/>
-                                    <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle theme</Typography>
+                                    <LightMode sx={{fontSize: "25px"}}/>
+                                    <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Toggle
+                                        theme</Typography>
                                 </div>
                             )}
                         </IconButton>
 
                         <IconButton sx={{
                             borderRadius: "0px",
-                            "&:hover": { color: "#ff717b" }
+                            "&:hover": {color: "#ff717b"}
                         }}>
                             <Message sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Message</Typography>
@@ -204,7 +215,7 @@ function Navbar() {
 
                         <IconButton sx={{
                             borderRadius: "0px",
-                            "&:hover": { color: "#ff717b" }
+                            "&:hover": {color: "#ff717b"}
                         }}>
                             <Notifications sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Notifications</Typography>
@@ -212,7 +223,7 @@ function Navbar() {
 
                         <IconButton sx={{
                             borderRadius: "0px",
-                            "&:hover": { color: "#ff717b" }
+                            "&:hover": {color: "#ff717b"}
                         }}>
                             <Help sx={{fontSize: "25px"}}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Help</Typography>
@@ -220,9 +231,9 @@ function Navbar() {
 
                         <IconButton sx={{
                             borderRadius: "0px",
-                            "&:hover": { color: "#ff717b" }
+                            "&:hover": {color: "#ff717b"}
                         }}>
-                            <Logout sx={{fontSize: "25px"}} onClick={() => dispatch(setLogout())}/>
+                            <Logout sx={{fontSize: "25px"}} onClick={handleLogout}/>
                             <Typography style={{fontSize: "17px", paddingLeft: "1rem"}}>Log out</Typography>
                         </IconButton>
 

@@ -2,10 +2,10 @@ import React from 'react';
 import Navbar from "../navbar/Navbar";
 import {Box, useMediaQuery} from "@mui/material";
 import {useSelector} from "react-redux";
-import UserWidget from "../widgets/UserWidget";
+import UserWidget from "../widgets/user/UserWidget";
 
 function HomePage() {
-    const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+    const isNonMobileScreens = useMediaQuery("(min-width:1100px)");
     const {_id, picturePath} = useSelector((state) => state.user);
 
     // Will return all the widgets
