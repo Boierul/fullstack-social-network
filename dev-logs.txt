@@ -64,3 +64,9 @@ MERN stack -> {
 <----------------------------------------------------------------------------------------------------------------->
 |   client -> jsconfig.json             |       Will easier the import of different objects                       |
 <----------------------------------------------------------------------------------------------------------------->
+
+For next bigger projects:
+    - When fullstack-ing, do make sure to design data models beforehand, saves a lot of problems later
+    - Even further deconstruct the components in more modular parts
+    - Write more wrapper functions for scaling and modularity
+    - Always refactor !

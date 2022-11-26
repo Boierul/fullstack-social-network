@@ -6,6 +6,7 @@ import {Box, useMediaQuery} from "@mui/material";
 import Navbar from "../navbar/Navbar";
 import UserWidget from "../widgets/user/UserWidget";
 import MyPostWidget from "../widgets/posts/MyPostWidget";
+import PostsWidget from "../widgets/posts/PostsWidget";
 
 function HomePage() {
     const isNonMobileScreens = useMediaQuery("(min-width:1100px)");
@@ -23,7 +24,7 @@ function HomePage() {
                     padding="2rem 6%"
                     display={isNonMobileScreens ? "flex" : "block"}
                     gap="0.5rem"
-                    justifyContent="space-between"
+                    justifyContent="space-evenly"
                 >
                     <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
                         <UserWidget userId={_id} picturePath={picturePath}/>
@@ -34,6 +35,7 @@ function HomePage() {
                     mt={isNonMobileScreens ? undefined : "2rem"}
                 >
                     <MyPostWidget picturePath={picturePath}/>
+                    <PostsWidget userId={_id} />
                 </Box>
 
                 </Box>

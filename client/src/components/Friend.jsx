@@ -23,9 +23,11 @@ const Friend = ({friendId, name, subtitle, userPicturePath}) => {
 
     const isFriend = friends.find((friend) => friend._id === friendId);
 
+    const usersBaseURL = `http://localhost:3001/users`;
+
     const patchFriend = async () => {
         const response = await fetch(
-            `http://localhost:3001/users/${_id}/${friendId}`,
+            `${usersBaseURL}/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {
@@ -47,6 +49,7 @@ const Friend = ({friendId, name, subtitle, userPicturePath}) => {
                 <Box
                     onClick={() => {
                         navigate(`/profile/${friendId}`);
+                        // Will refresh the page
                         navigate(0);
                     }}
                 >
@@ -63,11 +66,11 @@ const Friend = ({friendId, name, subtitle, userPicturePath}) => {
                     >
                         {name}
                     </Typography>
+
                     <Typography color={medium} fontSize="0.75rem">
                         {subtitle}
                     </Typography>
                 </Box>
-
             </FlexBetween>
 
             <IconButton
@@ -80,6 +83,7 @@ const Friend = ({friendId, name, subtitle, userPicturePath}) => {
                     <PersonAddOutlined sx={{color: primaryDark}}/>
                 )}
             </IconButton>
+
         </FlexBetween>
     );
 };
