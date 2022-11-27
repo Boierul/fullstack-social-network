@@ -53,7 +53,16 @@ function Navbar() {
     }
 
     return (
-        <FlexBetween padding="1rem 3%" backgroundColor={alt} zIndex="1" width="100%" position="fixed">
+        <FlexBetween padding="1rem 3%"
+                     backgroundColor={alt}
+                     zIndex="1"
+                     width="87vw"
+                     position="fixed"
+                     borderRadius="1rem"
+                     alignContent="center"
+                     left="6%"
+                     transform="translateX(-50%)"
+        >
 
             <FlexBetween gap="1.75rem">
                 <Typography

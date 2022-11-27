@@ -17,7 +17,10 @@ function HomePage() {
     // Will return all the widgets
     return (
         <Box>
-            <Navbar/>
+
+            <Box>
+                <Navbar/>
+            </Box>
 
             <Box paddingTop="5rem">
 
