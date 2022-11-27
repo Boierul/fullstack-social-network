@@ -37,7 +37,7 @@ export const addRemoveFriend = async (req, res) => {
     try {
         const {id, friendId} = req.params;
         const user = await User.findById(id);
-        const friend = "637f835a93cb05b22d6c3e6d";
+        const friend = await User.findById(friendId);
 
         // Add/Remove Friend
         if (user.friends.includes(friendId)) {

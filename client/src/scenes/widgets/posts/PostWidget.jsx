@@ -20,7 +20,7 @@ import {setPost} from "state";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-const PostWidget = ({
+const           PostWidget = ({
                         postId,
                         postUserId,
                         name,
