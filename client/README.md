@@ -1,6 +1,6 @@
 # Social network with JWT auth (Client)
 
-Frontend degisn and overall style is inspired by Facebook-like social networks. The web-application is responsive and deliver proper UX when resized. Implemented Dropzone, which allows image upload. MUI was used as a layout lib. Redux was used as a state management solution. 
+Front-end design and overall style is inspired by Facebook-like social networks. The web-application is responsive and deliver proper UX when resized. Implemented Dropzone, which allows image upload. MUI was used as a layout lib. Redux was used as a state management solution. 
 
 ## Frontend dependencies and their role
 
